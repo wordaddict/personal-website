@@ -5,26 +5,200 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Micheal Adeyinka</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      
+      @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      
+      .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+      
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+      
+      .gradient-bg {
+        background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #475569);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+      }
+      
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+      
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+      }
+      
+      .icon-bounce {
+        transition: transform 0.2s ease;
+      }
+      
+      .card-hover:hover .icon-bounce {
+        transform: scale(1.1);
+      }
+    </style>
   </head>
-  <body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
-    <div class="bg-gray-800 p-10 rounded-2xl text-center max-w-sm shadow-lg">
-      <h1 class="text-2xl font-bold mb-2">Micheal Adeyinka</h1>
-      <p class="text-gray-400 mb-4 text-sm">
-        Software Engineer · Photographer · Podcaster · Building @ImmigrationBrief
-      </p>
-      <ul class="space-y-2">
-        <li><a href="https://www.linkedin.com/in/adeyinka-m-207986125/" class="text-blue-400 hover:underline">LinkedIn</a></li>
-        <li><a href="https://immigrationbrief.com" class="text-blue-400 hover:underline">ImmigrationBrief</a></li>
-        <li><a href="https://www.instagram.com/shotbyolamicheal/" class="text-blue-400 hover:underline">Photography</a></li>
-        <li><a href="https://open.spotify.com/show/66fZuj6icoIAr1EpKUZS67?si=12d7b627a5cd48f0" class="text-blue-400 hover:underline">Obscure thoughts</a></li>
-        <li><a href="https://www.instagram.com/obscurethoughtsbyolamicheal/" class="text-blue-400 hover:underline">Podcast</a></li>
-        <li><a href="https://medium.com/@word_addict1" class="text-blue-400 hover:underline">Medium</a></li>
-      </ul>
-      <p class="mt-6 text-blue-400 text-sm">
-        <a href="mailto:adeyinkamichealola@gmail.com" style="color: #3b82f6; font-weight: 500;">
-            adeyinkamichealola@gmail.com
-        </a>
-      </p>
-    </div>
+  <body class="gradient-bg text-white min-h-screen">
+    <!-- Header Section -->
+    <header class="container mx-auto px-6 py-12 text-center">
+      <div class="animate-fade-in-up">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          Micheal Adeyinka
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 mb-2 font-light">
+          Software Engineer
+        </p>
+        <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+          Building digital experiences, capturing moments through photography, and sharing thoughts on immigration and life through podcasting.
+        </p>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 pb-12">
+      <div class="max-w-4xl mx-auto">
+        <!-- Links Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/adeyinka-m-207986125/" 
+             class="card-hover bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 group">
+            <div class="flex items-center space-x-4">
+              <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
+                <i class="fab fa-linkedin-in text-white text-xl icon-bounce"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-white group-hover:text-blue-400 transition-colors">
+                  LinkedIn
+                </h3>
+                <p class="text-gray-400 text-sm">Professional Network</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- ImmigrationBrief -->
+          <a href="https://immigrationbrief.com" 
+             class="card-hover bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 group">
+            <div class="flex items-center space-x-4">
+              <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center">
+                <i class="fas fa-briefcase text-white text-xl icon-bounce"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-white group-hover:text-green-400 transition-colors">
+                  ImmigrationBrief
+                </h3>
+                <p class="text-gray-400 text-sm">Building @ImmigrationBrief</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Photography -->
+          <a href="https://www.instagram.com/shotbyolamicheal/" 
+             class="card-hover bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 group">
+            <div class="flex items-center space-x-4">
+              <div class="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center">
+                <i class="fas fa-camera text-white text-xl icon-bounce"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-white group-hover:text-pink-400 transition-colors">
+                  Photography
+                </h3>
+                <p class="text-gray-400 text-sm">Visual Stories</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Podcast -->
+          <a href="https://open.spotify.com/show/66fZuj6icoIAr1EpKUZS67?si=12d7b627a5cd48f0" 
+             class="card-hover bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 group">
+            <div class="flex items-center space-x-4">
+              <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
+                <i class="fas fa-podcast text-white text-xl icon-bounce"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-white group-hover:text-purple-400 transition-colors">
+                  Obscure Thoughts
+                </h3>
+                <p class="text-gray-400 text-sm">Podcast</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/obscurethoughtsbyolamicheal/" 
+             class="card-hover bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 group">
+            <div class="flex items-center space-x-4">
+              <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                <i class="fab fa-instagram text-white text-xl icon-bounce"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-white group-hover:text-pink-400 transition-colors">
+                  Podcast Instagram
+                </h3>
+                <p class="text-gray-400 text-sm">Behind the Scenes</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Medium -->
+          <a href="https://medium.com/@word_addict1" 
+             class="card-hover bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 group">
+            <div class="flex items-center space-x-4">
+              <div class="w-12 h-12 bg-yellow-600 rounded-xl flex items-center justify-center">
+                <i class="fab fa-medium-m text-white text-xl icon-bounce"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-white group-hover:text-yellow-400 transition-colors">
+                  Medium
+                </h3>
+                <p class="text-gray-400 text-sm">Writing & Thoughts</p>
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Email Section -->
+        <div class="text-center animate-fade-in-up" style="animation-delay: 0.3s;">
+          <div class="inline-flex items-center space-x-3 bg-gray-800/50 backdrop-blur-sm rounded-2xl px-8 py-4 border border-gray-700/50">
+            <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+              <i class="fas fa-envelope text-white"></i>
+            </div>
+            <a href="mailto:adeyinkamichealola@gmail.com" 
+               class="text-blue-400 hover:text-blue-300 transition-colors font-medium">
+              adeyinkamichealola@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-gray-400 text-sm">
+      <p>&copy; 2025 Micheal Adeyinka. All rights reserved.</p>
+    </footer>
   </body>
 </html>
